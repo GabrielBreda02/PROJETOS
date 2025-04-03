@@ -1,65 +1,108 @@
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
+    background-color: #e0f7fa;
     margin: 0;
-}
-
-.container {
-    text-align: center;
-}
-
-h1 {
     color: #333;
 }
 
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(4, 100px);
-    gap: 10px;
-    margin: 20px auto;
-}
-
-.card {
-    width: 100px;
-    height: 100px;
-    background-color: #4682b4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #00796b;
     font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 10px;
+    font-weight: bold;
 }
 
-.card.flipped {
-    background-color: #fff;
-    color: #000;
-    cursor: default;
+.game-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card.matched {
-    background-color: #32cd32;
-    cursor: default;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #80cbc4;
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    background-color: #004d40;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+td {
+    background-color: #b2dfdb;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    background-color: #ffffff;
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #4682b4;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
     cursor: pointer;
-    margin-top: 20px;
+    background-color: #004d40;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #4169e1;
+    background-color: #00796b;
+}
+
+#result {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00796b;
+}
+
+/* Ajustando imagens */
+.image-container-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 20px; /* Espaço entre imagens */
+    margin-top: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px; /* Largura máxima da imagem */
+    height: 220px; /* Altura máxima da imagem */
+}
+
+.image-container img {
+    max-width: 100%; /* Garantir que a imagem preencha o container */
+    max-height: 100%;
+    border-radius: 10px;
+    border: 2px solid #004d40;
 }

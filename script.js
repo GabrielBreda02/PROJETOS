@@ -1,76 +1,75 @@
 
-const board = document.getElementById('game-board');
-const resetButton = document.getElementById('reset-button');
+document.getElementById('submit-btn').addEventListener('click', function () {
+    const selects = document.querySelectorAll('.organ-select');
+    let correctAnswers = 0;
 
-const icons = ['🍎', '🍌', '🍇', '🍉', '🍓', '🍋', '🍍', '🍑',
-                '🍎', '🍌', '🍇', '🍉', '🍓', '🍋', '🍍', '🍑'];
+    selects.forEach(select => {
+        const selectedValue = select.value.trim().toLowerCase(); // Normaliza o valor
+        const correctValue = select.dataset.answer.trim().toLowerCase(); // Normaliza a resposta
 
-let firstCard = null;
-let secondCard = null;
-let lockBoard = false;
-
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-function createBoard() {
-    shuffle(icons);
-    board.innerHTML = '';
-    icons.forEach(icon => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.dataset.icon = icon;
-        card.addEventListener('click', flipCard);
-        board.appendChild(card);
+        // Verifica se a resposta está correta
+        if (selectedValue === correctValue) {
+            correctAnswers++;
+            select.style.borderColor = '#32cd32'; // Verde para respostas corretas
+            select.style.backgroundColor = '#d4edda';
+        } else {
+            select.style.borderColor = '#ff6347'; // Vermelho para respostas erradas
+            select.style.backgroundColor = '#f8d7da';
+        }
     });
-}
 
-function flipCard() {
-    if (lockBoard || this === firstCard || this.classList.contains('flipped')) return;
+    // Mensagem de resultado
+    const resultText = correctAnswers === selects.length
+        ? "Parabéns! Você acertou todos os benefícios das frutas! 🎉"
+        : `Você acertou ${correctAnswers} de ${selects.length}. Tente novamente!`;
 
-    this.classList.add('flipped');
-    this.textContent = this.dataset.icon;
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = resultText;
 
-    if (!firstCard) {
-        firstCard = this;
-        return;
-    }
-
-    secondCard = this;
-    lockBoard = true;
-
-    checkMatch();
-}
-
-function checkMatch() {
-    if (firstCard.dataset.icon === secondCard.dataset.icon) {
-        firstCard.classList.add('matched');
-        secondCard.classList.add('matched');
-        resetBoard();
-        return;
-    }
-
+    // Animação para o resultado
+    resultElement.style.opacity = 0;
+    resultElement.style.transition = "opacity 0.5s";
     setTimeout(() => {
-        firstCard.classList.remove('flipped');
-        secondCard.classList.remove('flipped');
-        firstCard.textContent = '';
-        secondCard.textContent = '';
-        resetBoard();
-    }, 1000);
-}
+        resultElement.style.opacity = 1;
+    }, 100);
 
-function resetBoard() {
-    [firstCard, secondCard] = [null, null];
-    lockBoard = false;
-}
+    // Limpa as cores após 3 segundos
+    setTimeout(() => {
+        selects.forEach(select => {
+            select.style.borderColor = '#00796b';
+            select.style.backgroundColor = '#ffffff';
+        });
+    }, 3000);
+});
+document.getElementById('retry-btn').addEventListener('click', function () {
+    const selects = document.querySelectorAll('.organ-select');
 
-function resetGame() {
-    createBoard();
-}
+    // Reseta todas as seleções para o valor inicial
+    selects.forEach(select => {
+        select.value = ""; // Voltar para "Selecione..."
+        select.style.borderColor = ""; // Remove as bordas coloridas
+        select.style.backgroundColor = ""; // Remove os fundos coloridos
+    });
 
-resetButton.addEventListener('click', resetGame);
+    // Limpa o texto do resultado
+    const resultElement = document.getElementById('result');
+    resultElement.textContent = "";
+    resultElement.style.opacity = 0;
 
-createBoard();
+    // Esconde o botão de jogar novamente
+    this.style.display = "none";
+
+    // Reaparece o botão de "Vamos ver se você foi bem!"
+    document.getElementById('submit-btn').style.display = "inline-block";
+});
+
+// Modificação no botão de "Vamos ver se você foi bem!" para exibir o botão de "Jogar Novamente"
+document.getElementById('submit-btn').addEventListener('click', function () {
+    const retryButton = document.getElementById('retry-btn');
+
+    // Exibe o botão de "Jogar Novamente" após o resultado
+    retryButton.style.display = "inline-block";
+
+    // Opcional: Ocultar o botão de "Vamos ver se você foi bem!"
+    this.style.display = "none";
+});

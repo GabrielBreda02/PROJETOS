@@ -1,60 +1,141 @@
 <!DOCTYPE html>
-			<html>
-			<head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas com seus Benefícios para a Saúde</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Jogo: Relacione as Frutas com seus Benefícios para a Saúde!</h1>
 
-				<meta charset="utf-8">
-				<title>meu site</title>
-				<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <div class="game-container">
+        <!-- Tabela com benefícios e seleção de frutas -->
+        <div class="table-container">
+            <table id="body-organs-table">
+                <thead>
+                    <tr>
+                        <th>Benefício da fruta</th>
+                        <th>Fruta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Boa para o coração</td>
+                        <td>
+                            <select class="organ-select" data-answer="banana">
+                                <option value="">Selecione...</option>
+                                <option value="banana">Banana</option>
+                                <option value="cenoura">Cenoura</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="limão">Limão</option>
+                                <option value="mamão">Mamão</option>
+                                <option value="pêra">Pêra</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Boa para os olhos</td>
+                        <td>
+                            <select class="organ-select" data-answer="cenoura">
+                                <option value="">Selecione...</option>
+                                <option value="banana">Banana</option>
+                                <option value="cenoura">Cenoura</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="limão">Limão</option>
+                                <option value="mamão">Mamão</option>
+                                <option value="pêra">Pêra</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bom para a imunidade</td>
+                        <td>
+                            <select class="organ-select" data-answer="kiwi">
+                                <option value="">Selecione...</option>
+                                <option value="banana">Banana</option>
+                                <option value="cenoura">Cenoura</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="limão">Limão</option>
+                                <option value="mamão">Mamão</option>
+                                <option value="pêra">Pêra</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bom para prevenir gripes, resfriados e alergias </td>
+                        <td>
+                            <select class="organ-select" data-answer="limão">
+                                <option value="">Selecione...</option>
+                                <option value="banana">Banana</option>
+                                <option value="cenoura">Cenoura</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="limão">Limão</option>
+                                <option value="mamão">Mamão</option>
+                                <option value="pêra">Pêra</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bom para o intestino</td>
+                        <td>
+                            <select class="organ-select" data-answer="mamão">
+                                <option value="">Selecione...</option>
+                                <option value="banana">Banana</option>
+                                <option value="cenoura">Cenoura</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="limão">Limão</option>
+                                <option value="mamão">Mamão</option>
+                                <option value="pêra">Pêra</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Boa para a visão e intestino</td>
+                        <td>
+                            <select class="organ-select" data-answer="pêra">
+                                <option value="">Selecione...</option>
+                                <option value="banana">Banana</option>
+                                <option value="cenoura">Cenoura</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="limão">Limão</option>
+                                <option value="mamão">Mamão</option>
+                                <option value="pêra">Pêra</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-			</head>
-			<body>
-				<div class="container">
-					<h1 class="text-center">PAGINA PRINCIPAL SIM REDE DE POSTOS </h1> 
-					<div class="row">
-						<div class="col-md-3">
-							<a class="btn btn-primary" href = "https://www.simrede.com.br/" target="_blank">SITE SIM REDE DE POSTOS
-							</a>
-						</div>
-						<div class="col-md-3"><a class="btn btn-warning"> home </a>
-						</div>
-						<div class="col-md-3"><a href="contato.html"> contato </a></div>
-						<div class="col-md-3"><a href="informacoes_empresa.html"> Sobre a empresa </a></div>
-			</div>
-				 <br/>
-				<hr/>
-				<img src="https://www.simrede.com.br/media/1142/Design-sem-nome-(22).png" width="100%" height="400" /> <br/>
+        <!-- Imagens das frutas -->
+        <div class="image-container-wrapper">
+            <div class="image-container">
+                <img src="banana.png" alt="Banana" height="600" width="600">
+            </div>
+            <div class="image-container">
+                <img src="cenoura.png" alt="Cenoura" height="300" width="250">
+            </div>
+            <div class="image-container">
+                <img src="kiwi.png" alt="Kiwi" height="250" width="250">
+            </div>
+            <div class="image-container">
+                <img src="limão.png" alt="Limão" height="250" width="250">
+            </div>
+            <div class="image-container">
+                <img src="mamão.png" alt="Mamão" height="250" width="250">
+            </div>
+            <div class="image-container">
+                <img src="pêra.png" alt="Pêra" height="250" width="250">
+            </div>
+    </div>
 
-				<h1>PROBLEMAS DOS POSTOS </h1>
-				<ul>
-					<li>concentrador</li>
-					<li>banco topando</li>
-					<li>operadores sem instrução</li>
-					<li>pinpad</li>
-				</ul>
-				<hr/>
-				<h1>perguntas frequentes</h1>
-				<ol>
-					<li>qual o vnc ?</li>
-					<li>troca o numero do cliente para mim ?</li>
-					<li>oque é um concentrador ?</li>
-					<hr/>
-				</ol>
-				<a class="btn btn-primary" href = "https://pranx.com/hacker/simulador-pt/" target="_blank"> CLIQUE AQUI :]
-							</a>
-				<div class="alert alert-danger" role="alert">
-					<div class="col-md-3">
-					 </a>erro ao cadastrar usuario
-					
-				</div>
+    <!-- Botão de envio -->
+    <button id="submit-btn">Vamos ver se você foi bem!</button>
+    <p id="result"></p>
+    <button id="retry-btn" style="display: none;">Jogar Novamente</button>
 
-				
-
-				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-				
-
-			</body>
-
-				</html>
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
