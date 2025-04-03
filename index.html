@@ -1,67 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Simples</title>
+    <title>Currículo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #fafafa;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.5;
             margin: 0;
-            padding: 0;
+            padding: 40px;
             text-align: center;
         }
 
-        .blog-container {
-            max-width: 700px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .blog-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #000;
-            margin-bottom: 20px;
-        }
-
-        .post {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin-bottom: 20px;
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: left;
         }
 
-        .post h2 {
-            font-size: 22px;
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000;
             margin-bottom: 5px;
         }
 
-        .post p {
-            font-size: 16px;
-            color: #555;
+        .subtitle {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
-    <div class="blog-container">
-        <div class="blog-title">Meu Blog Simples</div>
+    <div class="cv-container">
+        <h1>Gabriel Breda Medeiros</h1>
+        <p class="subtitle">Analista de Sistemas</p>
         
-        <div class="post">
-            <h2>Primeiro Post</h2>
-            <p><em>Publicado em: 01 de Abril de 2025</em></p>
-            <p>Este é o conteúdo do primeiro post. Aqui você pode escrever sobre qualquer assunto interessante.</p>
-        </div>
+        <hr>
         
-        <div class="post">
-            <h2>Segundo Post</h2>
-            <p><em>Publicado em: 02 de Abril de 2025</em></p>
-            <p>Este é o conteúdo do segundo post. Continue compartilhando suas ideias e histórias aqui.</p>
-        </div>
+        <section>
+            <h2>Experiência</h2>
+            <ul>
+                <li>Inserção de dados em banco de dados na empresa SimRede.</li>
+                <li>Suporte técnico e infraestrutura de TI.</li>
+            </ul>
+        </section>
+        
+        <hr>
+        
+        <section>
+            <h2>Formação</h2>
+            <ul>
+                <li>Análise e Desenvolvimento de Sistemas - FSG (em andamento).</li>
+                <li>Ciência da Computação - FSG (cursado por 2 anos).</li>
+                <li>Engenharia da Computação - UNIFTEC (meio semestre).</li>
+            </ul>
+        </section>
+        
+        <hr>
+        
+        <section>
+            <h2>Habilidades</h2>
+            <ul>
+                <li>Banco de dados (avançado).</li>
+                <li>Redes e infraestrutura (intermediário).</li>
+                <li>C# (básico).</li>
+                <li>HTML e CSS (básico).</li>
+            </ul>
+        </section>
     </div>
 </body>
 </html>
