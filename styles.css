@@ -1,108 +1,149 @@
 body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #e0f7fa;
-    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
     color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Alinha os itens em coluna */
+    height: 100vh;
 }
 
+/* Título */
 h1 {
+    font-size: 36px;
+    color: #4CAF50;
     margin-bottom: 20px;
-    text-align: center;
-    color: #00796b;
-    font-size: 2rem;
     font-weight: bold;
 }
 
+/* Container do Jogo */
 .game-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 30px 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 80%;
     max-width: 600px;
-    margin-bottom: 20px;
-}
-
-th, td {
-    border: 1px solid #80cbc4;
+    margin-top: 20px; /* Adiciona um espaço entre o título e o container */
     text-align: center;
+}
+
+/* Estilo das perguntas */
+#question-container p {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Estilo das opções de resposta */
+.option {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #555;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
-th {
-    background-color: #004d40;
-    color: #ffffff;
-    font-size: 1.2rem;
+.option input {
+    margin-right: 10px;
+    transform: scale(1.2);
 }
 
-td {
-    background-color: #b2dfdb;
+.option:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
 }
 
-select {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #00796b;
-    border-radius: 5px;
-    background-color: #ffffff;
+.option input:checked + label {
+    color: #4CAF50;
+    font-weight: bold;
 }
 
+/* Botões */
 button {
     padding: 12px 24px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    background-color: #004d40;
-    color: #ffffff;
+    background-color: #4CAF50;
+    color: white;
     border: none;
-    border-radius: 10px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin: 10px 5px;
 }
 
 button:hover {
-    background-color: #00796b;
+    background-color: #45a049;
 }
 
+#next-btn {
+    background-color: #FF9800;
+}
+
+#next-btn:hover {
+    background-color: #e68900;
+}
+
+/* Resultados */
 #result {
-    margin-top: 15px;
-    font-size: 1.2rem;
+    margin-top: 30px;
+    font-size: 22px;
     font-weight: bold;
-    color: #00796b;
 }
 
-/* Ajustando imagens */
-.image-container-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-    gap: 20px; /* Espaço entre imagens */
-    margin-top: 20px;
+#result.correct {
+    color: #4CAF50;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 220px; /* Largura máxima da imagem */
-    height: 220px; /* Altura máxima da imagem */
+#result.incorrect {
+    color: #FF6347;
 }
 
-.image-container img {
-    max-width: 100%; /* Garantir que a imagem preencha o container */
-    max-height: 100%;
-    border-radius: 10px;
-    border: 2px solid #004d40;
+#submit-btn {
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .option {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+    #restart-btn {
+    padding: 12px 24px;
+    background-color: #FF5722;  /* Cor laranja */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin: 10px 5px;
+    display: none;  /* Inicialmente invisível */
+}
+
+#restart-btn:hover {
+    background-color: #e64a19;  /* Cor laranja escuro */
 }

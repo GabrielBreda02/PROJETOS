@@ -3,139 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frutas com seus Benefícios para a Saúde</title>
+    <title>Qual a forma correta de lavar as mãos?</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Jogo: Relacione as Frutas com seus Benefícios para a Saúde!</h1>
+    <h1>Qual a forma correta de lavar as mãos?</h1>
 
     <div class="game-container">
-        <!-- Tabela com benefícios e seleção de frutas -->
-        <div class="table-container">
-            <table id="body-organs-table">
-                <thead>
-                    <tr>
-                        <th>Benefício da fruta</th>
-                        <th>Fruta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Boa para o coração</td>
-                        <td>
-                            <select class="organ-select" data-answer="banana">
-                                <option value="">Selecione...</option>
-                                <option value="banana">Banana</option>
-                                <option value="cenoura">Cenoura</option>
-                                <option value="kiwi">Kiwi</option>
-                                <option value="limão">Limão</option>
-                                <option value="mamão">Mamão</option>
-                                <option value="pêra">Pêra</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Boa para os olhos</td>
-                        <td>
-                            <select class="organ-select" data-answer="cenoura">
-                                <option value="">Selecione...</option>
-                                <option value="banana">Banana</option>
-                                <option value="cenoura">Cenoura</option>
-                                <option value="kiwi">Kiwi</option>
-                                <option value="limão">Limão</option>
-                                <option value="mamão">Mamão</option>
-                                <option value="pêra">Pêra</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bom para a imunidade</td>
-                        <td>
-                            <select class="organ-select" data-answer="kiwi">
-                                <option value="">Selecione...</option>
-                                <option value="banana">Banana</option>
-                                <option value="cenoura">Cenoura</option>
-                                <option value="kiwi">Kiwi</option>
-                                <option value="limão">Limão</option>
-                                <option value="mamão">Mamão</option>
-                                <option value="pêra">Pêra</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bom para prevenir gripes, resfriados e alergias </td>
-                        <td>
-                            <select class="organ-select" data-answer="limão">
-                                <option value="">Selecione...</option>
-                                <option value="banana">Banana</option>
-                                <option value="cenoura">Cenoura</option>
-                                <option value="kiwi">Kiwi</option>
-                                <option value="limão">Limão</option>
-                                <option value="mamão">Mamão</option>
-                                <option value="pêra">Pêra</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bom para o intestino</td>
-                        <td>
-                            <select class="organ-select" data-answer="mamão">
-                                <option value="">Selecione...</option>
-                                <option value="banana">Banana</option>
-                                <option value="cenoura">Cenoura</option>
-                                <option value="kiwi">Kiwi</option>
-                                <option value="limão">Limão</option>
-                                <option value="mamão">Mamão</option>
-                                <option value="pêra">Pêra</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Boa para a visão e intestino</td>
-                        <td>
-                            <select class="organ-select" data-answer="pêra">
-                                <option value="">Selecione...</option>
-                                <option value="banana">Banana</option>
-                                <option value="cenoura">Cenoura</option>
-                                <option value="kiwi">Kiwi</option>
-                                <option value="limão">Limão</option>
-                                <option value="mamão">Mamão</option>
-                                <option value="pêra">Pêra</option>
-                            </select>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="question-container">
+            <!-- As perguntas serão inseridas aqui dinamicamente -->
         </div>
-
-        <!-- Imagens das frutas -->
-        <div class="image-container-wrapper">
-            <div class="image-container">
-                <img src="banana.png" alt="Banana" height="600" width="600">
-            </div>
-            <div class="image-container">
-                <img src="cenoura.png" alt="Cenoura" height="300" width="250">
-            </div>
-            <div class="image-container">
-                <img src="kiwi.png" alt="Kiwi" height="250" width="250">
-            </div>
-            <div class="image-container">
-                <img src="limão.png" alt="Limão" height="250" width="250">
-            </div>
-            <div class="image-container">
-                <img src="mamão.png" alt="Mamão" height="250" width="250">
-            </div>
-            <div class="image-container">
-                <img src="pêra.png" alt="Pêra" height="250" width="250">
-            </div>
+        <div id="result" style="margin-top: 20px;"></div>
+        <button id="submit-btn">Enviar Resposta</button>
+        <button id="next-btn" style="display: none;">Próxima Pergunta</button>
+        <button id="restart-btn" style="display: none;">Reiniciar o Jogo</button>
     </div>
 
-    <!-- Botão de envio -->
-    <button id="submit-btn">Vamos ver se você foi bem!</button>
-    <p id="result"></p>
-    <button id="retry-btn" style="display: none;">Jogar Novamente</button>
-
-    <!-- Script JS -->
     <script src="script.js"></script>
 </body>
 </html>
