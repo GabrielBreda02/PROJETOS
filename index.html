@@ -1,50 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ícones Sociais</title>
+    <title>Layout Grid</title>
     <style>
-        body {
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
         }
-        .social-container {
-            display: flex;
-            gap: 10px;
+
+        .container {
+            display: grid;
+            grid-template-columns: 200px auto;
+            grid-template-rows: 60px auto 40px;
+            grid-template-areas: 
+                "header header"
+                "sidebar main"
+                "footer footer";
+            height: 100vh;
         }
-        .icon {
-            width: 40px;
-            height: 40px;
-            display: inline-block;
-            background-color: #333;
-            border-radius: 50%;
-            text-align: center;
+
+        .header {
+            grid-area: header;
+            background: #000;
             color: #fff;
-            font-size: 20px;
-            font-weight: bold;
-            line-height: 40px;
-            transition: background 0.3s, color 0.3s;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .icon:hover {
-            background-color: #aaa;
-            color: #000;
+
+        .sidebar {
+            grid-area: sidebar;
+            background: #ccc;
+            padding: 10px;
         }
-        .icon::before {
-            content: attr(data-icon);
+
+        .main {
+            grid-area: main;
+            background: #fff;
+            padding: 10px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background: #444;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body>
-    <div class="social-container">
-        <span class="icon" data-icon="F"></span>
-        <span class="icon" data-icon="T"></span>
-        <span class="icon" data-icon="I"></span>
+    <div class="container">
+        <div class="header">Cabeçalho</div>
+        <div class="sidebar">Barra Lateral</div>
+        <div class="main">Conteúdo Principal</div>
+        <div class="footer">Rodapé</div>
     </div>
 </body>
 </html>
