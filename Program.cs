@@ -4,23 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
-namespace EstruturaRepetitivaWhile
+
+namespace Exercicio5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(" quais itens foram pegos, e a quantidade para o calculo:");
+            string[] tabela = Console.ReadLine().Split(' ');
+            int codigo = int.Parse(tabela[0]);
+            int quantidade = int.Parse(tabela[1]);
 
-            Console.Write("Digite um numero :");
-            double x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            while (x >= 0.0)
+            double total;
+
+            if (codigo == 1)
             {
-                double raiz = Math.Sqrt(x);
-                Console.WriteLine(raiz.ToString("f3", CultureInfo.InvariantCulture));
-                Console.Write("Digite outro numero : ");
-                x = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);   
+                total = quantidade * 4.0;
             }
-            Console.WriteLine("numero negativo ! ");
+            else if (codigo == 2)
+            {
+                total = quantidade * 4.5;
+            }
+            else if(codigo == 3)
+            {
+                total = quantidade * 5.0;
+            }
+            else if (codigo == 4)
+            {
+                total = quantidade * 2.0;
+            } 
+            else
+            {
+                total = quantidade * 1.5;
+            }
+            Console.WriteLine("total: R$" + total.ToString("f2", CultureInfo.InvariantCulture));
+                
         }
     }
 }
