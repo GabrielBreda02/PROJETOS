@@ -3,110 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout Responsivo</title>
+    <title>Blog Simples</title>
     <style>
         body {
-            font-size: 16px;
-            color: #333;
-            background-color: #fff;
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
             margin: 0;
             padding: 0;
             text-align: center;
-            font-family: Arial, sans-serif;
         }
 
-        .header {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            line-height: 60px;
-            height: 60px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .container {
-            display: flex;
-            width: 90%;
+        .blog-container {
+            max-width: 700px;
             margin: 20px auto;
-            overflow: hidden;
-        }
-
-        .column {
-            width: 30%;
-            margin: 0 1.66%;
-            background-color: #f0f0f0;
             padding: 20px;
-            display: inline-block;
-            box-sizing: border-box;
-            justify-content: space-between;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 600px) {
-            .column {
-                width: 100%;
-                margin: 0 0 10px 0;
-                display: block;
-            }
+        .blog-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
         }
 
-        /* Estilos para a tabela */
-        .pricing-table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        .pricing-table th, .pricing-table td {
-            border: 1px solid #000;
-            padding: 8px;
+        .post {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
             text-align: left;
         }
 
-        .pricing-table th {
-            background-color: #ccc;
-            font-weight: bold;
+        .post h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
         }
 
-        .pricing-table tr:nth-child(even) {
-            background-color: #f9f9f9;
+        .post p {
+            font-size: 16px;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <div class="header">Meu Layout Responsivo</div>
-    <div class="container">
-        <div class="column">Coluna 1</div>
-        <div class="column">Coluna 2</div>
-        <div class="column">Coluna 3</div>
+    <div class="blog-container">
+        <div class="blog-title">Meu Blog Simples</div>
+        
+        <div class="post">
+            <h2>Primeiro Post</h2>
+            <p><em>Publicado em: 01 de Abril de 2025</em></p>
+            <p>Este é o conteúdo do primeiro post. Aqui você pode escrever sobre qualquer assunto interessante.</p>
+        </div>
+        
+        <div class="post">
+            <h2>Segundo Post</h2>
+            <p><em>Publicado em: 02 de Abril de 2025</em></p>
+            <p>Este é o conteúdo do segundo post. Continue compartilhando suas ideias e histórias aqui.</p>
+        </div>
     </div>
-
-    <table class="pricing-table">
-        <tr>
-            <th>Produto</th>
-            <th>Descrição</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>Smartphone</td>
-            <td>Celular com 128GB de armazenamento</td>
-            <td>R$ 2.500,00</td>
-        </tr>
-        <tr>
-            <td>Notebook</td>
-            <td>Processador i7, 16GB RAM, SSD 512GB</td>
-            <td>R$ 4.800,00</td>
-        </tr>
-        <tr>
-            <td>Fone Bluetooth</td>
-            <td>Cancelamento de ruído, bateria de 20h</td>
-            <td>R$ 350,00</td>
-        </tr>
-        <tr>
-            <td>Mouse Gamer</td>
-            <td>RGB, 7 botões programáveis</td>
-            <td>R$ 220,00</td>
-        </tr>
-    </table>
 </body>
 </html>
