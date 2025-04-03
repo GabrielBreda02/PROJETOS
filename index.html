@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gradiente Linear</title>
+    <title>Ícones Sociais</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
+            background-color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(to bottom, #a8ddff, #005b9f);
-            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
         }
-        h1 {
-            color: white;
-            font-size: 24px;
+        .social-container {
+            display: flex;
+            gap: 10px;
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background-color: #333;
+            border-radius: 50%;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
             font-weight: bold;
+            line-height: 40px;
+            transition: background 0.3s, color 0.3s;
+            position: relative;
+        }
+        .icon:hover {
+            background-color: #aaa;
+            color: #000;
+        }
+        .icon::before {
+            content: attr(data-icon);
         }
     </style>
 </head>
 <body>
-    <h1>Bem-vindo ao Gradiente!</h1>
+    <div class="social-container">
+        <span class="icon" data-icon="F"></span>
+        <span class="icon" data-icon="T"></span>
+        <span class="icon" data-icon="I"></span>
+    </div>
 </body>
 </html>
